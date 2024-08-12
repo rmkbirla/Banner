@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getBanner, updateBanner } = require('./controllers');
+const { getBanner, updateBanner, getAllBanners, createBanner, deleteBanner } = require('./controllers');
 
+router.get('/banner', getAllBanners);
 router.get('/banner/:id', getBanner);
-router.post('/banner/update/:id', updateBanner);
+router.put('/banner/update/:id', updateBanner);
+router.post('/banner/create', createBanner);
+router.delete('/banner/delete/:id', deleteBanner);
 
 module.exports = router;
