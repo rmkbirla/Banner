@@ -37,9 +37,7 @@ const updateTimer = async () => {
         if (results.affectedRows === 0) {
             clearInterval(timerInterval);
             timerInterval=0;
-            console.log('No visible banners left.');
-        } else {
-            console.log('Timer updated.');
+            // console.log('No visible banners left.');
         }
     } catch (err) {
         console.error('Error updating timers:', err);
@@ -70,7 +68,7 @@ exports.getBanner = async (req, res) => {
         }
         else{
             res.json({message : "banner is expired!"});
-            console.log(rows[0].timer, rows[0].is_visible);
+            // console.log(rows[0].timer, rows[0].is_visible);
         }
         
     } catch (err) {
